@@ -1,0 +1,16 @@
+<form th:action="@{/submitTask}" th:object="${task}" method="post" xmlns:th="http://www.thymeleaf.org">
+    <div class="form-row">
+        <h1>Task submission</h1>
+        <div class="col-md-6 form-group">
+            <label>GID</label>
+            <input type="text" class="form-control" th:field="*{gid}">
+        </div>
+        <select name="Type">
+            <option th:each="type : ${T(com.microfocus.interApp.domain.Task.OperType).values()}"
+                    th:value="${type}" th:text="${type.getDisplayValue}"></option>
+        </select>
+        <div>
+            <button class="submit" type="submit">Submit</button>
+        </div>
+    </div>
+</form>

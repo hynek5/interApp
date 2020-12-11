@@ -1,0 +1,15 @@
+<form th:action="@{/addUser}" th:object="${user}" method="post" xmlns:th="http://www.thymeleaf.org">
+    <div class="form-row">
+        <div class="col-md-6 form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" th:field="*{name}">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>email address</label>
+            <input type="text" class="form-control" th:field="*{mailAccount}">
+        </div>
+        <div>
+            <button class="submit" type="submit">Register</button>
+        </div>
+    </div>
+</form>

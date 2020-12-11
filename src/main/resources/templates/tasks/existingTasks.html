@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Registered users</title>
+</head>
+<body>
+<h1>Existing Tasks</h1>
+
+<table>
+    <colgroup>
+        <col span="1" style="width: 30%">
+        <col span="4" style="width: 10%;">
+    </colgroup>
+    <tr bgcolor="#a9a9a9">
+        <th>UUID</th>
+        <th>GID</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Metadata</th>
+
+    </tr>
+    <tr align="center" th:each="task : ${tasks}">
+        <td th:text="${task.getUuid().toString()}">uuid</td>
+        <td  th:text="${task.getGid()}">gid</td>
+        <td th:text="${task.getType().toString()}">type</td>
+        <td th:text="${task.getStatus().toString()}">status</td>
+        <td th:text="${task.getMetadata()}">metadata</td>
+    </tr>
+</table>
+</body>
+</html>
