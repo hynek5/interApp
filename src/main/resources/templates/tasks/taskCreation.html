@@ -9,6 +9,10 @@
             <option th:each="type : ${T(com.microfocus.interApp.domain.Task.OperType).values()}"
                     th:value="${type}" th:text="${type.getDisplayValue}"></option>
         </select>
+        <div class="col-md-6 form-group">
+            <label>Metadata (optional)</label>
+            <input type="text" class="form-control" th:field="*{metadata}">
+        </div>
         <div>
             <button class="submit" type="submit">Submit</button>
         </div>
