@@ -27,13 +27,13 @@ public class DefaultCriteria implements Critera {
         if (runningType.isEmpty()) {
             generatedKey[1] = runningType.add(task.getType());
             generatedKey[0] = runningGid.add(task.getGid());
-            logger.debug("current critera GID: {}, TYPE:{}",runningGid.toString(), runningType.toString());
+            logger.trace("current critera GID: {}, TYPE:{}",runningGid.toString(), runningType.toString());
             return generatedKey;
         }
         if (runningType.contains(task.getType())) {
             generatedKey[1] = true;
             generatedKey[0] = runningGid.add(task.getGid());
-            logger.debug("current critera GID: {}, TYPE:{}",runningGid.toString(), runningType.toString());
+            logger.trace("current critera GID: {}, TYPE:{}",runningGid.toString(), runningType.toString());
             return generatedKey;
 
         }
@@ -49,7 +49,7 @@ public class DefaultCriteria implements Critera {
     public void updateCriteria(Task completedTask) {
         runningGid.remove(completedTask.getGid());
         runningType.remove(completedTask.getType());
-        logger.debug("current critera GID: {}, TYPE:{}",runningGid.toString(), runningType.toString());
+        logger.trace("current critera GID: {}, TYPE:{}",runningGid.toString(), runningType.toString());
     }
 
 

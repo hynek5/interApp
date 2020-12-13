@@ -40,8 +40,5 @@ public class BootStrapData implements CommandLineRunner {
         mailAccountRepository.save(account2);
         mailAccountRepository.save(account3);
 
-        Iterable<User> users = userRepository.findAll();
-        Iterable<MailAccount> accounts = mailAccountRepository.findAll();
-
     }
 }

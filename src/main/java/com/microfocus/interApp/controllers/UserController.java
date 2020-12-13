@@ -45,7 +45,6 @@ public class UserController {
 
     @PostMapping("addUser")
     public String validateAndAddUser(@ModelAttribute("user")User userCandidate, Model model) {
-        //todo check for null value
         DataService<User> userService = new UserService(userRepository);
         model.addAttribute("message", userService.insertToDb(userCandidate) );
         return "result";

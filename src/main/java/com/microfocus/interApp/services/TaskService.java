@@ -23,6 +23,9 @@ public class TaskService implements DataService<Task> {
 
     @Override
     public String insertToDb(Task entity) {
+        if (entity.getGid().isEmpty()) {
+            return "Please fill up group id";
+        }
         repository.save(entity);
         return "Task has been created and queued";
     }
@@ -33,10 +36,7 @@ public class TaskService implements DataService<Task> {
 
     public Stream<Task> findNewTasks() {
         Stream<Task> newTasks = null;
-        // try {
         newTasks = repository.findByStatus(Task.Status.NEW).stream();//.forEach(task -> logger.info("task id: {}",task.getId()));
-
         return newTasks;
-        // }
     }
 }

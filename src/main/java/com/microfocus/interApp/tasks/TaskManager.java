@@ -2,17 +2,17 @@ package com.microfocus.interApp.tasks;
 
 import com.microfocus.interApp.domain.Task;
 
-import static com.microfocus.interApp.InterAppApplication.logger;
-
 import java.util.LinkedList;
 import java.util.Queue;
+
+import static com.microfocus.interApp.InterAppApplication.logger;
 
 public class TaskManager<T extends Handler> implements Runnable {
 
     Queue<Task> pendingTasks = new LinkedList<>();
     Queue<Task> completedTasks = new LinkedList<>();
     private T dbHandler;
-    T taskHandler;
+    private T taskHandler;
 
 
     public TaskManager(T dbHandler, T taskHandler)  {

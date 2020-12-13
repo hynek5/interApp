@@ -21,6 +21,11 @@ public class RunnableTask implements Runnable {
     @Override
     public void run() {
         try {
+            logger.debug("Task:{}, GID:{}, type:{} running on thread:{}",
+                    originalTask.getUuid(),
+                    originalTask.getGid(),
+                    originalTask.getType(),
+                    Thread.currentThread().getName());
             Thread.sleep(15000);
             callback.taskDone();
         } catch (InterruptedException e) {

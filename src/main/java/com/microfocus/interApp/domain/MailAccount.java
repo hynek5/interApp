@@ -1,13 +1,12 @@
 package com.microfocus.interApp.domain;
 
 import javax.persistence.*;
-import java.lang.annotation.Annotation;
 import java.util.Objects;
 
 @Entity
 public class MailAccount {
 
-
+    @Column(unique = true)
     private String fullName;
     @Id
     @GeneratedValue
@@ -39,12 +38,12 @@ public class MailAccount {
         return user;
     }
 
+
     @Override
     public String toString() {
         return "MailAccount{" +
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
-              //  ", domain='" + domain + '\'' +
                 '}';
     }
 

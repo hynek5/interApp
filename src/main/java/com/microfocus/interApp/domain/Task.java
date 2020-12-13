@@ -18,7 +18,6 @@ public class Task implements Entity {
         return null;
     }
 
-    //TODO private
     public enum OperType {
         READ("Read"),
         WRITE("Write");
@@ -36,7 +35,7 @@ public class Task implements Entity {
 
     }
 
-    public static enum Status {
+    public  enum Status {
         NEW,
         COMPLETED,
         PENDING,
